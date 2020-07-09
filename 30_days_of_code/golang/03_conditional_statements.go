@@ -19,23 +19,16 @@ func main() {
   if N % 2 != 0 {
     fmt.Println("Weird")
   } else {
-    if N >= 2 && N <= 5 {
+    switch number := N; {
+    case number >= 2 && number <= 5:
       fmt.Println("Not Weird")
-      return
-    }
-
-    if N >= 6 && N <= 20 {
+    case number >= 6 && number <= 20:
       fmt.Println("Weird")
-      return
-    }
-
-    if N > 20 {
+    case number > 20:
       fmt.Println("Not Weird")
-
-      return
+    default:
+      fmt.Println("Not Weird")
     }
-
-    fmt.Println("Not Weird")
   }
 }
 
