@@ -1,6 +1,0 @@
-#!/bin/bash -e
-
-./docker_build
-echo "running: $@"
-docker run --rm go-app go run "$@"
-
