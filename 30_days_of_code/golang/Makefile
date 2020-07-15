@@ -4,6 +4,8 @@ build:
 run:
 	docker run --rm go-app bash -c "go run $(file) < in.txt"
 
+build_run: build run
+
 run_bash:
 	docker run --name go-app --rm -i -t go-app bash
 
