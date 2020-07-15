@@ -11,12 +11,12 @@ import (
 
 // Complete the solve function below.
 func solve(meal_cost float64, tip_percent int32, tax_percent int32) {
-  p := meal_cost * float64(tip_percent) / 100
+    p := meal_cost * float64(tip_percent) / 100
 
-  tax := meal_cost * float64(tax_percent) / 100
-  meal_cost += p
+    tax := meal_cost * float64(tax_percent) / 100
+    meal_cost += p
 
-  fmt.Printf("%2.f\n", meal_cost + tax)
+    fmt.Printf("%2.f\n", meal_cost + tax)
 }
 
 func main() {

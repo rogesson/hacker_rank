@@ -2,50 +2,50 @@ package main
 import "fmt"
 
 type person struct {
-  age int
+    age int
 }
 
 func (p person) NewPerson(initialAge int) person {
-  if initialAge < 0 {
-    fmt.Println("Age is not valid, setting age to 0.")
-    initialAge = 0
-  }
+    if initialAge < 0 {
+        fmt.Println("Age is not valid, setting age to 0.")
+        initialAge = 0
+    }
 
-  p.age = initialAge
-  return p
+    p.age = initialAge
+    return p
 }
 
 func (p person) amIOld() {
-  switch age := p.age; {
-  case age < 13:
-    fmt.Println("You are young.")
-  case age >= 13 && age < 18:
-    fmt.Println("You are a teenager.")
-  default:
-    fmt.Println("You are old.")
-  }
+    switch age := p.age; {
+    case age < 13:
+        fmt.Println("You are young.")
+    case age >= 13 && age < 18:
+        fmt.Println("You are a teenager.")
+    default:
+        fmt.Println("You are old.")
+    }
 }
 
 func (p person) yearPasses() person {
-  p.age += 1
+    p.age += 1
 
-  return p
+    return p
 }
 
 func main() {
-  var T,age int
+    var T,age int
 
-  fmt.Scan(&T)
+    fmt.Scan(&T)
 
-  for i := 0; i < T; i++ {
-    fmt.Scan(&age)
-    p := person{age: age}
-    p = p.NewPerson(age)
-    p.amIOld()
-    for j := 0; j < 3; j++ {
-      p = p.yearPasses()
+    for i := 0; i < T; i++ {
+        fmt.Scan(&age)
+        p := person{age: age}
+        p = p.NewPerson(age)
+        p.amIOld()
+        for j := 0; j < 3; j++ {
+            p = p.yearPasses()
+        }
+        p.amIOld()
+        fmt.Println()
     }
-    p.amIOld()
-    fmt.Println()
-  }
 }

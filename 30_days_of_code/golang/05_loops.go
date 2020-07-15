@@ -19,8 +19,8 @@ func main() {
     var index int32
 
     for index = 1; index <= 10; index += 1 {
-      result := n * index
-      fmt.Printf("%d x %d = %d\n", n, index, result)
+        result := n * index
+        fmt.Printf("%d x %d = %d\n", n, index, result)
     }
 }
 
