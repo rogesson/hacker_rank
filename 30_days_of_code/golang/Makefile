@@ -1,13 +1,14 @@
 build:
 	docker build -t go-app .
 
-run:
+run: build
 	docker run --rm go-app bash -c "go run $(file) < in.txt"
 
-build_run: build run
-
-run_bash:
+run_bash: build
 	docker run --name go-app --rm -i -t go-app bash
+
+test: build
+	docker run --rm go-app bash -c "go test -v $(folder)/main_test.go $(folder)/main.go"
 
 #[todo] add syntax analyzer
 #lint:
