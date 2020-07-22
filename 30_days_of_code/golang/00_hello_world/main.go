@@ -13,8 +13,7 @@ func main() {
     PrintMessages(messages)
 }
 
-
-func PrintMessages(messages []string) bool {
+    func PrintMessages(messages []string) bool {
     for message := range messages {
         fmt.Println(message)
     }
