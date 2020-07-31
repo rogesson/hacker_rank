@@ -16,20 +16,26 @@ func main() {
     checkError(err)
     N := int32(NTemp)
 
-    if N % 2 != 0 {
-        fmt.Println("Weird")
+    fmt.Println(CheckNumber(N))
+}
+
+func CheckNumber(n int32) (text string) {
+    if n % 2 != 0 {
+        text = "Weird"
     } else {
-        switch number := N; {
+        switch number := n; {
         case number >= 2 && number <= 5:
-            fmt.Println("Not Weird")
+            text = "Not Weird"
         case number >= 6 && number <= 20:
-            fmt.Println("Weird")
+            text = "Weird"
         case number > 20:
-            fmt.Println("Not Weird")
+            text = "Not Weird"
         default:
-            fmt.Println("Not Weird")
+            text = "Not Weird"
         }
     }
+
+    return
 }
 
 func readLine(reader *bufio.Reader) string {
