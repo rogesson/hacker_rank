@@ -16,9 +16,14 @@ Each programming language has a folder with the subject of the code that is insi
 ```
 /hacker_rank
   /30_days_of_code
-    /01_hello_word
-      main.go
-      main_test.go
+    /ruby
+    /javascript
+    /java
+    /golang
+      /01_hello_word
+        main.go
+        main_test.go
+
 ```
 
 ## Usage
