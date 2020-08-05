@@ -14,16 +14,17 @@ This repository uses Dockerfile for each programming language, so you don't need
 Each programming language has a folder with the subject of the code that is inside, and two files: main file and test file, eg:
 
 ```
-/hacker_rank
-  /30_days_of_code
-    /ruby
-    /javascript
-    /java
-    /golang
-      /01_hello_word
-        main.go
-        main_test.go
-
+|hacker_rank
+|--30_days_of_code
+    |--ruby
+    |--javascript
+    |--java
+    |--golang
+        |--00_hello_word
+          main.go
+          main_test.go
+        |--01_data_types
+        |--02_operators
 ```
 
 ## Usage
