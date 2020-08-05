@@ -32,14 +32,14 @@ Each programming language has a folder with the subject of the code that is insi
 To execute the code, use the command bellow:
 
 ```bash
-make test folder=folder_of_your_code
+make test folder=00_hello_word
 ```
 
 ## 30 Days of Code
 
 https://www.hackerrank.com/domains/tutorials/30-days-of-code
 
-### Programming Languages
+### Finished Programming Languages
 
 - [x] Ruby
 - [ ] Golang
