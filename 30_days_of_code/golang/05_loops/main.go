@@ -19,9 +19,13 @@ func main() {
     var index int32
 
     for index = 1; index <= 10; index += 1 {
-        result := n * index
+        result := calculate(n, index)
         fmt.Printf("%d x %d = %d\n", n, index, result)
     }
+}
+
+func calculate(n, index int32) int32 {
+    return n * index
 }
 
 func readLine(reader *bufio.Reader) string {
