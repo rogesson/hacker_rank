@@ -15,15 +15,17 @@ func (p person) NewPerson(initialAge int) person {
     return p
 }
 
-func (p person) amIOld() {
+func (p person) amIOld() (message string) {
     switch age := p.age; {
     case age < 13:
-        fmt.Println("You are young.")
+        message = "You are young."
     case age >= 13 && age < 18:
-        fmt.Println("You are a teenager.")
+        message = "You are a teenager."
     default:
-        fmt.Println("You are old.")
+        message = "You are old."
     }
+
+    return
 }
 
 func (p person) yearPasses() person {
@@ -33,7 +35,7 @@ func (p person) yearPasses() person {
 }
 
 func main() {
-    var T,age int
+    var T, age int
 
     fmt.Scan(&T)
 
@@ -42,10 +44,12 @@ func main() {
         p := person{age: age}
         p = p.NewPerson(age)
         p.amIOld()
-        for j := 0; j < 3; j++ {
+
+        for j := 0; j < T; j++ {
             p = p.yearPasses()
         }
-        p.amIOld()
-        fmt.Println()
+
+        message := p.amIOld()
+        fmt.Println(message)
     }
 }
