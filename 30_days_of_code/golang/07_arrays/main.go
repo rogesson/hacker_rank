@@ -9,8 +9,6 @@ import (
     "strings"
 )
 
-
-
 func main() {
     reader := bufio.NewReaderSize(os.Stdin, 1024 * 1024)
 
@@ -29,13 +27,23 @@ func main() {
         arr = append(arr, arrItem)
     }
 
-    var reverseArr []string
+    reversedArray := reverseArray(&arr)
 
-    for i := len(arr) -1; i >= 0; i-- {
-        reverseArr = append(reverseArr, strconv.Itoa(int(arr[i])))
+    for index, element := range reversedArray {
+        if index != 0 {
+            fmt.Print(" ")
+        }
+
+        fmt.Print(element)
+    }
+}
+
+func reverseArray(array *[]int32) (reversedArray []int32) {
+    for i := len(*array) -1; i >= 0; i-- {
+        reversedArray = append(reversedArray, (*array)[i])
     }
 
-    fmt.Println(strings.Join(reverseArr, " "))
+    return
 }
 
 func readLine(reader *bufio.Reader) string {
