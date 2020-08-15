@@ -8,7 +8,7 @@ import (
     "strconv"
 )
 
-func factorial(n int32) int32 {
+func factorial(n int) int {
     if n < 1 {
         return 1
     }
@@ -26,7 +26,7 @@ func main() {
 
     number, _ := strconv.Atoi(string(str))
 
-    f := factorial(int32(number))
+    f := factorial(number)
 
     fmt.Println(f)
 }
