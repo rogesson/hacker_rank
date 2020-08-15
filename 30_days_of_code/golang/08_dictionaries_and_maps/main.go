@@ -21,7 +21,7 @@ func main() {
     for i := 0; i < n; i++ {
         contact := readLine(reader)
 
-        saveContact(agenda, contact)
+        saveContact(&agenda, contact)
     }
 
     for i := n;; i++ {
@@ -31,24 +31,21 @@ func main() {
             break
         }
 
-        contact := findContact(agenda, name)
+        contact := findContact(&agenda, name)
         fmt.Println(contact)
     }
 }
 
-func saveContact(agenda map[string]int, contact string) {
+func saveContact(agenda *map[string]int, contact string) {
     c := strings.Split(contact, " ")
     name := c[0]
-    number, err := strconv.Atoi(c[1])
-    if err != nil {
-        fmt.Println("Number not valid %s\n", err)
-    }
+    number, _ := strconv.Atoi(c[1])
 
-    agenda[name] = number
+    (*agenda)[name] = number
 }
 
-func findContact(agenda map[string]int, name string) string {
-    number := agenda[name]
+func findContact(agenda *map[string]int, name string) string {
+    number := (*agenda)[name]
 
     if number == 0 {
         return "Not found"
